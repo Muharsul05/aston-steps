@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw01.task1;
 
 abstract class Transport {
+
     private String brand;
     private String name;
     private String model;
@@ -11,7 +12,7 @@ abstract class Transport {
 
     abstract void showInfo();
 
-    public Transport(String brand, String name, String model) {
+    protected Transport(String brand, String name, String model) {
         this.brand = brand;
         this.name = name;
         this.model = model;

@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw01.task4;
 
 class Runner {
+
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         System.out.println("Add");

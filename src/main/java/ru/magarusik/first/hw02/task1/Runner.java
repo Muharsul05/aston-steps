@@ -3,7 +3,6 @@ package ru.magarusik.first.hw02.task1;
 class Runner {
 
     public static void main(String[] args) {
-
         System.out.println("________________Truck___________________");
         var truck = new Truck(FuelType.GASOLINE, 5,
                 1000, 2000);

@@ -1,7 +1,6 @@
 package ru.magarusik.first.hw02.task1;
 
 enum LuxaryLevel {
-
     ECONOM("Эконом"),
     STANDARD("Стандарт"),
     COMFORT("Комфорт"),

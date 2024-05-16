@@ -5,7 +5,6 @@ import java.util.List;
 class Runner {
 
     public static void main(String[] args) {
-
         System.out.println("____________Immutable_Person_____________");
         var immutablePerson = new ImmutablePerson("John", 25,
                 List.of("music", "sport", "programming"));

@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw01.task3;
 
 class PersonBuilder {
+
     private String name;
     private String surname;
     private int age;

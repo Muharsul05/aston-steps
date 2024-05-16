@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw01.task3;
 
 class Person {
+
     public static String name;
     public static String surname;
     public static int age;

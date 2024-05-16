@@ -23,6 +23,10 @@ class Bike extends Transport {
         );
     }
 
+    public void trick() {
+        System.out.println("Велосипедист делает трюк");
+    }
+
     public Bike(String brand, String name, String model, int maxSpeed) {
         super(brand, name, model);
         this.maxSpeed = maxSpeed;

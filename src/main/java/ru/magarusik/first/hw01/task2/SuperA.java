@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw01.task2;
 
 class SuperA {
+
     public static final String A_CONST = "A_CONST";
     public final String A_FIELD = "A_FIELD";
 
