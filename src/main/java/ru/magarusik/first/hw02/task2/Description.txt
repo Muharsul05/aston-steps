@@ -1,0 +1,3 @@
+Создайте класс ImmutablePerson с полями (String name, int age, и List<String> hobbies). Создайте класс
+MutablePerson с такими же полями (String name, int age, и List<String> hobbies). Создайте класс Runner и
+проверьте изменяемость и неизменяемость объектов.
