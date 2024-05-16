@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw01.Task3;
+package ru.magarusik.first.hw01.task3;
 
 class Runner {
     public static void main(String[] args) {

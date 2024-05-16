@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw01.Task3;
+package ru.magarusik.first.hw01.task3;
 
 class Person {
     public static String name;

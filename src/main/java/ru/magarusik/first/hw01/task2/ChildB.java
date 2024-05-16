@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw01.Task2;
+package ru.magarusik.first.hw01.task2;
 
 class ChildB extends SuperA {
     public static final String B_CONST = "B_CONST";

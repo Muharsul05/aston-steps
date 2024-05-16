@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw01.Task4;
+package ru.magarusik.first.hw01.task4;
 
 class Calculator {
     // Add

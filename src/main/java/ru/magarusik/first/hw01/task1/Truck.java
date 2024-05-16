@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw01.Task1;
+package ru.magarusik.first.hw01.task1;
 
 class Truck extends Transport {
     private double maxCarryWeight;
