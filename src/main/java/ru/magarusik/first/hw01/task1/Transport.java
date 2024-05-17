@@ -6,17 +6,17 @@ abstract class Transport {
     private String name;
     private String model;
 
-    abstract void drive();
-
-    abstract void stop();
-
-    abstract void showInfo();
-
     protected Transport(String brand, String name, String model) {
         this.brand = brand;
         this.name = name;
         this.model = model;
     }
+
+    abstract void drive();
+
+    abstract void stop();
+
+    abstract void showInfo();
 
     public String getBrand() {
         return brand;

@@ -6,6 +6,13 @@ class Car extends Transport {
     private int year;
     private double weight;
 
+    public Car(String brand, String name, String model, String color, int year, double weight) {
+        super(brand, name, model);
+        this.color = color;
+        this.year = year;
+        this.weight = weight;
+    }
+
     @Override
     void drive() {
         System.out.println("Машина поехала");
@@ -29,13 +36,6 @@ class Car extends Transport {
                 "\t'year:' " + getYear() +
                 "\t'weight': " + getWeight()
         );
-    }
-
-    public Car(String brand, String name, String model, String color, int year, double weight) {
-        super(brand, name, model);
-        this.color = color;
-        this.year = year;
-        this.weight = weight;
     }
 
     public String getColor() {

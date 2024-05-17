@@ -6,12 +6,12 @@ class Computer {
 
         private String model;
 
-        public String getDetails() {
-            return model;
-        }
-
         public Processor(String model) {
             this.model = model;
+        }
+
+        public String getDetails() {
+            return model;
         }
     }
 
@@ -19,12 +19,12 @@ class Computer {
 
         private int size;
 
-        public String getDetails() {
-            return String.valueOf(size);
-        }
-
         public RAM(int size) {
             this.size = size;
+        }
+
+        public String getDetails() {
+            return String.valueOf(size);
         }
     }
 }

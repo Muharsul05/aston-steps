@@ -2,16 +2,15 @@ package ru.magarusik.first.hw02.task1;
 
 class Truck extends Car {
 
+    private int numberOfDoors;
+    private int trunkCapacity;
     private int maxLoadCapacity;
 
-    @Override
-    public int getNumberOfDoors() {
-        return super.getNumberOfDoors();
-    }
-
-    @Override
-    public int getTrunkCapacity() {
-        return super.getTrunkCapacity();
+    public Truck(FuelType fuelType, int numberOfDoors, int trunkCapacity, int maxLoadCapacity) {
+        super(fuelType);
+        this.numberOfDoors = numberOfDoors;
+        this.trunkCapacity = trunkCapacity;
+        this.maxLoadCapacity = maxLoadCapacity;
     }
 
     @Override
@@ -25,20 +24,28 @@ class Truck extends Car {
     }
 
     @Override
-    public FuelType getFuelType() {
-        return super.getFuelType();
+    public int getNumberOfDoors() {
+        return this.numberOfDoors;
+    }
+
+    @Override
+    public int getTrunkCapacity() {
+        return this.trunkCapacity;
     }
 
     public int getMaxLoadCapacity() {
-        return maxLoadCapacity;
+        return this.maxLoadCapacity;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public void setTrunkCapacity(int trunkCapacity) {
+        this.trunkCapacity = trunkCapacity;
     }
 
     public void setMaxLoadCapacity(int maxLoadCapacity) {
-        this.maxLoadCapacity = maxLoadCapacity;
-    }
-
-    public Truck(FuelType fuelType, int numberOfDoors, int trunkCapacity, int maxLoadCapacity) {
-        super(fuelType, numberOfDoors, trunkCapacity);
         this.maxLoadCapacity = maxLoadCapacity;
     }
 
@@ -46,9 +53,9 @@ class Truck extends Car {
     public String toString() {
         return "Truck{" +
                 "maxLoadCapacity=" + maxLoadCapacity +
-                ", fuelType=" + super.getFuelType() +
-                ", numberOfDoors=" + super.getNumberOfDoors() +
-                ", trunkCapacity=" + super.getTrunkCapacity() +
+                ", fuelType=" + getFuelType() +
+                ", numberOfDoors=" + getNumberOfDoors() +
+                ", trunkCapacity=" + getTrunkCapacity() +
                 '}';
     }
 }

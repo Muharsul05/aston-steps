@@ -2,21 +2,15 @@ package ru.magarusik.first.hw02.task1;
 
 class Sedan extends Car {
 
+    private int numberOfDoors;
+    private int trunkCapacity;
     private LuxaryLevel luxuryLevel;
 
     public Sedan(FuelType fuelType, int numberOfDoors, int trunkCapacity, LuxaryLevel luxuryLevel) {
-        super(fuelType, numberOfDoors, trunkCapacity);
+        super(fuelType);
+        this.numberOfDoors = numberOfDoors;
+        this.trunkCapacity = trunkCapacity;
         this.luxuryLevel = luxuryLevel;
-    }
-
-    @Override
-    public int getNumberOfDoors() {
-        return super.getNumberOfDoors();
-    }
-
-    @Override
-    public int getTrunkCapacity() {
-        return super.getTrunkCapacity();
     }
 
     @Override
@@ -30,12 +24,29 @@ class Sedan extends Car {
     }
 
     @Override
-    public FuelType getFuelType() {
-        return super.getFuelType();
+    public int getNumberOfDoors() {
+        return this.numberOfDoors;
+    }
+
+    @Override
+    public int getTrunkCapacity() {
+        return this.trunkCapacity;
     }
 
     public LuxaryLevel getLuxuryLevel() {
         return luxuryLevel;
+    }
+
+    public void setFuelType(FuelType fuelType) {
+        super.setFuelType(fuelType);
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public void setTrunkCapacity(int trunkCapacity) {
+        this.trunkCapacity = trunkCapacity;
     }
 
     public void setLuxuryLevel(LuxaryLevel luxuryLevel) {

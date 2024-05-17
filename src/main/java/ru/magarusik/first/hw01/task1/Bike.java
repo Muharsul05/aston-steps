@@ -4,6 +4,11 @@ class Bike extends Transport {
 
     private int maxSpeed;
 
+    public Bike(String brand, String name, String model, int maxSpeed) {
+        super(brand, name, model);
+        this.maxSpeed = maxSpeed;
+    }
+
     @Override
     void drive() {
         System.out.println("Велосипед едет");
@@ -25,11 +30,6 @@ class Bike extends Transport {
 
     public void trick() {
         System.out.println("Велосипедист делает трюк");
-    }
-
-    public Bike(String brand, String name, String model, int maxSpeed) {
-        super(brand, name, model);
-        this.maxSpeed = maxSpeed;
     }
 
     public int getMaxSpeed() {

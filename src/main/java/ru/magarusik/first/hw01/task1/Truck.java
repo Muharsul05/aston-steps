@@ -4,6 +4,11 @@ class Truck extends Transport {
 
     private double maxCarryWeight;
 
+    public Truck(String brand, String name, String model, double maxCarryWeight) {
+        super(brand, name, model);
+        this.maxCarryWeight = maxCarryWeight;
+    }
+
     @Override
     void drive() {
         System.out.println("Грузовик едет");
@@ -21,11 +26,6 @@ class Truck extends Transport {
                 "\t'brand:' " + getBrand() +
                 "\t'maxCarryWeight:' " + getMaxCarryWeight()
         );
-    }
-
-    public Truck(String brand, String name, String model, double maxCarryWeight) {
-        super(brand, name, model);
-        this.maxCarryWeight = maxCarryWeight;
     }
 
     boolean canCarry(double weight) {

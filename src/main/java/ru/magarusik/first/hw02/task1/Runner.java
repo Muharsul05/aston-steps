@@ -14,7 +14,7 @@ class Runner {
         truck.stop();
 
         System.out.println("\n________________Sedan___________________");
-        var sedan = new Sedan(FuelType.DIESEL, 5,
+        var sedan = new Sedan(FuelType.ELECTRIC, 5,
                 1000, LuxaryLevel.PREMIUM);
         sedan.start();
         System.out.println("Количество дверей: " + sedan.getNumberOfDoors());
@@ -34,5 +34,21 @@ class Runner {
         truck.start();
         System.out.println(truck.getFuelType());
         truck.stop();
+
+        System.out.println("\n_____________Car_Sedan_______________");
+        Car carSedan = sedan;
+        carSedan.start();
+        System.out.println("Тип топлива: " + carSedan.getFuelType());
+        System.out.println("Количество дверей: " + carSedan.getNumberOfDoors());
+        System.out.println("Ёмкость багажника: " + carSedan.getTrunkCapacity());
+        carSedan.stop();
+
+        System.out.println("\n_____________Car_Truck_______________");
+        Car carTruck = truck;
+        carTruck.start();
+        System.out.println("Тип топлива: " + carTruck.getFuelType());
+        System.out.println("Количество дверей: " + carTruck.getNumberOfDoors());
+        System.out.println("Ёмкость багажника: " + carTruck.getTrunkCapacity());
+        carTruck.stop();
     }
 }

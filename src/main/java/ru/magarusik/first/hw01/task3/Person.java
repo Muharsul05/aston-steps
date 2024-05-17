@@ -4,6 +4,16 @@ class Person {
 
     public static String name;
     public static String surname;
+
+    public Person(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
+
+    public Person() {
+    }
+
     public static int age;
 
     public String getName() {
@@ -28,15 +38,6 @@ class Person {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public Person(String name, String surname, int age) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-    }
-
-    public Person() {
     }
 
     @Override
