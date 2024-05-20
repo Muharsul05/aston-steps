@@ -1,5 +1,6 @@
 package ru.magarusik.first.hw02.task2;
 
+import java.util.Collections;
 import java.util.List;
 
 class ImmutablePerson {
@@ -11,7 +12,7 @@ class ImmutablePerson {
     public ImmutablePerson(String name, int age, List<String> hobbies) {
         this.name = name;
         this.age = age;
-        this.hobbies = hobbies;
+        this.hobbies = Collections.unmodifiableList(hobbies);
     }
 
     public String getName() {
