@@ -18,7 +18,7 @@ public class Runner {
     public static String doubleString(String string) {
         var stringBuilder = new StringBuilder();
         for (var c : string.toCharArray()) {
-            if (Character.isAlphabetic(c)) {
+            if (Character.isLetter(c)) {
                 stringBuilder.append(c);
             }
             stringBuilder.append(c);
