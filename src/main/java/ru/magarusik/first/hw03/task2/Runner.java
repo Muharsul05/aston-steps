@@ -1,22 +1,31 @@
 package ru.magarusik.first.hw03.task2;
 
-import java.util.Scanner;
+import ru.magarusik.first.hw03.Utils;
+
+import java.util.List;
 
 public class Runner {
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        List<String> list = Utils.inputStrings();
 
-        System.out.println("Введите 3 строки:");
-        String str1 = scanner.nextLine();
-        String str2 = scanner.nextLine();
-        String str3 = scanner.nextLine();
-
-        int avgLength = (str1.length() + str2.length() + str3.length()) / 3;
+        long avgLength = getAvgLength(list);
 
         System.out.println("Средняя длина: " + avgLength);
-        if (str1.length() < avgLength) System.out.println(str1 + " длина: " + str1.length());
-        if (str2.length() < avgLength) System.out.println(str2 + " длина: " + str2.length());
-        if (str3.length() < avgLength) System.out.println(str3 + " длина: " + str3.length());
+
+        printStringIfLessThanAvgLength(list, avgLength);
+    }
+
+    private static long getAvgLength(List<String> list) {
+        return (long) list.stream()
+                .mapToInt(String::length)
+                .average()
+                .orElse(0L);
+    }
+
+    private static void printStringIfLessThanAvgLength(List<String> list, long avgLength) {
+        list.stream()
+                .filter(s -> s.length() < avgLength)
+                .forEach(str -> System.out.println(str + " длина: " + str.length()));
     }
 }

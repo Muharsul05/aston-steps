@@ -1,24 +1,33 @@
 package ru.magarusik.first.hw03.task1;
 
-import java.util.Scanner;
+import ru.magarusik.first.hw03.Utils;
+
+import java.util.Comparator;
+import java.util.List;
 
 public class Runner {
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        List<String> list = Utils.inputStrings();
 
-        System.out.println("Введите 3 строки:");
-        String str1 = scanner.nextLine();
-        String str2 = scanner.nextLine();
-        String str3 = scanner.nextLine();
+        String max = getMaxStringByLength(list);
 
-        String max = str1.length() > str2.length() && str1.length() > str3.length() ? str1
-                : str2.length() > str3.length() ? str2 : str3;
-
-        String min = str1.length() < str2.length() && str1.length() < str3.length() ? str1
-                : str2.length() < str3.length() ? str2 : str3;
+        String min = getMinStringByLength(list);
 
         System.out.println("Максимальная строка: " + max + " длина: " + max.length());
         System.out.println("Минимальная строка: " + min + " длина: " + min.length());
+    }
+
+
+    private static String getMaxStringByLength(List<String> list) {
+        return list.stream()
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+    }
+
+    private static String getMinStringByLength(List<String> list) {
+        return list.stream()
+                .min(Comparator.comparingInt(String::length))
+                .orElse("");
     }
 }
