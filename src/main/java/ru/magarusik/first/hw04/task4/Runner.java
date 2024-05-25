@@ -50,27 +50,26 @@ public class Runner {
     }
 
     private static void printStudents(List<Student> students) {
-        System.out.println("\nВсе студенты:");
-        for (Student student : students) {
-            System.out.println(student);
+        if (students.isEmpty()) {
+            System.out.println("Список пуст");
+        } else {
+            for (Student student : students) {
+                System.out.println(student);
+            }
         }
     }
 
     private static void printStudents(List<Student> students, int course) {
         System.out.println("\nСтуденты в курсе " + course + ":");
-        for (Student student : students) {
-            if (student.getCourse() == course) {
-                System.out.println(student);
-            }
-        }
+        printStudents(students.stream()
+                .filter(student -> student.getCourse() == course)
+                .toList());
     }
 
     private static void printStudents(List<Student> students, String group) {
         System.out.println("\nСтуденты в группе " + group + ":");
-        for (Student student : students) {
-            if (student.getGroup().equals(group)) {
-                System.out.println(student);
-            }
-        }
+        printStudents(students.stream()
+                .filter(student -> student.getGroup().equalsIgnoreCase(group))
+                .toList());
     }
 }

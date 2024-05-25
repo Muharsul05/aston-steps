@@ -8,11 +8,11 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        List<String> list = Utils.inputStrings();
+        List<String> strings = Utils.inputStrings();
 
-        String max = getMaxStringByLength(list);
+        String max = getMaxStringByLength(strings);
 
-        String min = getMinStringByLength(list);
+        String min = getMinStringByLength(strings);
 
         System.out.println("Максимальная строка: " + max + " длина: " + max.length());
         System.out.println("Минимальная строка: " + min + " длина: " + min.length());
@@ -22,12 +22,12 @@ public class Runner {
     private static String getMaxStringByLength(List<String> list) {
         return list.stream()
                 .max(Comparator.comparingInt(String::length))
-                .orElse("");
+                .orElseThrow(() -> new RuntimeException("Список пустой"));
     }
 
     private static String getMinStringByLength(List<String> list) {
         return list.stream()
                 .min(Comparator.comparingInt(String::length))
-                .orElse("");
+                .orElseThrow(() -> new RuntimeException("Список пустой"));
     }
 }

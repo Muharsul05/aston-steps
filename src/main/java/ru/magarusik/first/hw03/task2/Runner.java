@@ -7,20 +7,20 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        List<String> list = Utils.inputStrings();
+        List<String> strings = Utils.inputStrings();
 
-        long avgLength = getAvgLength(list);
+        long avgLength = getAvgLength(strings);
 
         System.out.println("Средняя длина: " + avgLength);
 
-        printStringIfLessThanAvgLength(list, avgLength);
+        printStringIfLessThanAvgLength(strings, avgLength);
     }
 
     private static long getAvgLength(List<String> list) {
         return (long) list.stream()
                 .mapToInt(String::length)
                 .average()
-                .orElse(0L);
+                .orElseThrow(() -> new RuntimeException("Список пустой"));
     }
 
     private static void printStringIfLessThanAvgLength(List<String> list, long avgLength) {
