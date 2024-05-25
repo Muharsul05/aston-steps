@@ -15,7 +15,5 @@ public class Utils {
     public static String inputString() {
         System.out.println("Введите строку для преобразования:");
         return scanner.nextLine();
-
     }
-
 }

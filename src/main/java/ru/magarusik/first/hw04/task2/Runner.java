@@ -17,6 +17,7 @@ public class Runner {
 
         countries.addLast(new Country("China", "Beijing", "Chinese", "CNY", 1_138, 9.596));
         countries.addLast(new Country("USA", "Washington", "English", "USD", 327, 9.984));
+
 //        2.3
         countries.removeFirst();
         countries.removeLast();

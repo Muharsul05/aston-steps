@@ -10,19 +10,15 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        List<String> list = Utils.inputStrings();
+        List<String> strings = Utils.inputStrings();
         List<String> words = new ArrayList<>();
 
-        for (String string : list) {
-            addAllWordsToList(words, string);
-        }
+        strings.forEach(string -> addAllWordsToList(words, string));
 
-        for (String word : words) {
-            if (isStringHasDifferentChars(word)) {
-                System.out.println(word);
-                break;
-            }
-        }
+        words.stream()
+                .filter(Runner::isStringHasDifferentChars)
+                .findFirst()
+                .ifPresent(System.out::println);
     }
 
     private static boolean isStringHasDifferentChars(String string) {

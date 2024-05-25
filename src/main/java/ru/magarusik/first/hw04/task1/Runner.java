@@ -8,8 +8,8 @@ public class Runner {
     public static void main(String[] args) {
 //        1.1
         List<Country> countries = new ArrayList<>();
-        System.out.println("Пустой список стран: " + countries);
 
+        printCountries(countries, "Пустой список стран");
 
         Country belarus = new Country("Belarus", "Minsk", "Belarusian", "BYN", 9, 10);
 
@@ -18,24 +18,20 @@ public class Runner {
         countries.add(new Country("Poland", "Warsaw", "Polish", "PLN", 38, 1.5));
         countries.add(new Country("Germany", "Berlin", "German", "EUR", 83, 1.5));
 
-        System.out.println("\nДобавили 3 страны: ");
-        printCountries(countries);
+        printCountries(countries, "Добавили 3 страны");
 
 //        1.3
         countries.set(1, new Country("USSR", "Moscow", "Russian", "RUB", 144, 17.098));
 
-        System.out.println("\nЗаменил Польшу на СССР: ");
-        printCountries(countries);
+        printCountries(countries, "Заменил Польшу на СССР");
 
 //        1.4
         countries.remove(1);
-        System.out.println("\nУдалил СССР: ");
-        printCountries(countries);
+        printCountries(countries, "Удалил СССР");
 
 //        1.5
         countries.remove(belarus);
-        System.out.println("\nУдалили Беларусь: ");
-        printCountries(countries);
+        printCountries(countries, "Удалили Беларусь");
 
         countries.addAll(List.of(
                 new Country("Russia", "Moscow", "Russian", "RUB", 144, 17.098),
@@ -48,8 +44,7 @@ public class Runner {
                 new Country("India", "New Delhi", "Hindi", "INR", 1_150, 3.287)
         ));
 
-        System.out.println("\nДобавили еще 7 стран: ");
-        printCountries(countries);
+        printCountries(countries, "Добавили еще 8 стран");
 
 //        1.6
         System.out.println("\nИндекс Беларуси: " + countries.indexOf(belarus));
@@ -59,8 +54,17 @@ public class Runner {
     }
 
     private static void printCountries(List<Country> countries) {
-        for (Country country : countries) {
-            System.out.println(country);
+        if (countries.isEmpty()) {
+            System.out.println("Список пуст");
+        } else {
+            for (Country country : countries) {
+                System.out.println(country);
+            }
         }
+    }
+
+    private static void printCountries(List<Country> countries, String message) {
+        System.out.println("\n" + message + ":");
+        printCountries(countries);
     }
 }
