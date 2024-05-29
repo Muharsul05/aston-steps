@@ -16,6 +16,11 @@ public class EmployeeGenerator {
     private static final List<String> DEPARTMENTS = List.of(
             "IT", "HR", "Sales", "Marketing", "Engineering", "Finance");
 
+    private static final int MIN_AGE = 20;
+    private static final int MAX_AGE = 60;
+    private static final int MIN_SALARY = 30_000;
+    private static final int MAX_SALARY = 90_000;
+
     static List<Employee> generateEmployeeList(int count) {
         return Stream
                 .generate(EmployeeGenerator::generateEmployee)
@@ -25,9 +30,17 @@ public class EmployeeGenerator {
 
     private static Employee generateEmployee() {
         return new Employee(
-                NAMES.get(RANDOM.nextInt(0, NAMES.size())),
-                RANDOM.nextInt(20, 60),
-                DEPARTMENTS.get(RANDOM.nextInt(0, DEPARTMENTS.size())),
-                RANDOM.nextInt(30_000, 90_000));
+                getRandomName(),
+                RANDOM.nextInt(MIN_AGE, MAX_AGE),
+                getRandomDepartment(),
+                RANDOM.nextInt(MIN_SALARY, MAX_SALARY));
+    }
+
+    private static String getRandomDepartment() {
+        return DEPARTMENTS.get(RANDOM.nextInt(0, DEPARTMENTS.size()));
+    }
+
+    private static String getRandomName() {
+        return NAMES.get(RANDOM.nextInt(0, NAMES.size()));
     }
 }
