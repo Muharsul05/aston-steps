@@ -6,23 +6,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Runner {
 
     private static final String FILE_NAME = "tms.txt";
+    private static final Logger LOGGER = Logger.getLogger(Runner.class.getName());
+    private static final Level DEFAULT_LOGGER_LEVEL = Level.INFO;
 
     public static void main(String[] args) {
+
+        LOGGER.setLevel(DEFAULT_LOGGER_LEVEL);
+
         List<String> strings = new ArrayList<>();
 
         inputStringsInConsole(strings);
 
-        System.out.println("\nСтроки записываются в файл: " + FILE_NAME);
+        LOGGER.info(("\nСтроки записываются в файл: " + FILE_NAME));
         writeStringsToFile(strings);
 
-        System.out.println("\nСтроки считываются из файла: " + FILE_NAME);
+        LOGGER.info("\nСтроки считываются из файла: " + FILE_NAME);
         readStringsFromFile(strings);
 
-        strings.stream().forEach(System.out::println);
+        strings.forEach(LOGGER::info);
     }
 
     /**
@@ -31,8 +38,8 @@ public class Runner {
      * @param strings список строк
      */
     private static void inputStringsInConsole(List<String> strings) {
-        System.out.println("Введите строки и если нужно выйти, то напишите exit:");
-        try (var scanner = new Scanner(System.in);) {
+        LOGGER.warning("Введите строки и если нужно выйти, то напишите exit:");
+        try (var scanner = new Scanner(System.in)) {
             String str = scanner.nextLine();
             while (!str.equalsIgnoreCase("exit")) {
                 strings.add(str + "\n");

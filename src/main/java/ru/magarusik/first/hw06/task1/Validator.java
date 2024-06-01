@@ -4,9 +4,15 @@ import ru.magarusik.first.hw06.task1.exceptions.WrongLoginException;
 import ru.magarusik.first.hw06.task1.exceptions.WrongPasswordException;
 
 /**
- * Класс нужен для проверки логина и пароля.
+ * Класс проверяет логин и пароль введенные пользователем.
  */
 public class Validator {
+
+    /**
+     * Переопределил конструктор по умолчанию и сделал приватным для чтобы не создавать объекты этого класса.
+     */
+    private Validator() {
+    }
 
     /**
      * Метод проверяет логин и пароль. Если login не соответствует требованиям то, выбрасывает WrongLoginException.
