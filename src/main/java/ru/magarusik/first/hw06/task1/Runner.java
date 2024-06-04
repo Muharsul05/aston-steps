@@ -4,17 +4,13 @@ import ru.magarusik.first.hw06.task1.exceptions.WrongLoginException;
 import ru.magarusik.first.hw06.task1.exceptions.WrongPasswordException;
 
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Runner {
 
     private static final Logger LOGGER = Logger.getLogger(Runner.class.getName());
-    private static final Level DEFAULT_LOGGER_LEVEL = Level.INFO;
 
     public static void main(String[] args) {
-
-        LOGGER.setLevel(DEFAULT_LOGGER_LEVEL);
 
         List<String> logins = List.of(
                 "", "login login", "loginloginloginloginloginl",

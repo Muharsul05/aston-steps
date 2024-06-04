@@ -6,29 +6,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Runner {
 
     private static final String FILE_NAME = "tms.txt";
     private static final Logger LOGGER = Logger.getLogger(Runner.class.getName());
-    private static final Level DEFAULT_LOGGER_LEVEL = Level.INFO;
 
     public static void main(String[] args) {
-
-        LOGGER.setLevel(DEFAULT_LOGGER_LEVEL);
 
         List<String> strings = new ArrayList<>();
 
         inputStringsInConsole(strings);
 
-        LOGGER.info(("\nСтроки записываются в файл: " + FILE_NAME));
         writeStringsToFile(strings);
 
-        LOGGER.info("\nСтроки считываются из файла: " + FILE_NAME);
         readStringsFromFile(strings);
 
+        LOGGER.info("Строки полученные из файла выводятся на консоль:");
         strings.forEach(LOGGER::info);
     }
 
@@ -54,6 +49,7 @@ public class Runner {
      * @param strings список строк
      */
     private static void writeStringsToFile(List<String> strings) {
+        LOGGER.info(("Строки записываются в файл: " + FILE_NAME + "\n"));
         try (var fos = new FileOutputStream(FILE_NAME)) {
             for (String string : strings) {
                 fos.write(string.getBytes());
@@ -69,6 +65,7 @@ public class Runner {
      * @param strings список строк
      */
     private static void readStringsFromFile(List<String> strings) {
+        LOGGER.info("Строки считываются из файла: " + FILE_NAME + "\n");
         strings.clear();
         try (var fis = new FileInputStream(FILE_NAME)) {
             strings.add(new String(fis.readAllBytes()).replace(" ", "_"));
