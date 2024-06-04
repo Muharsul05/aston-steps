@@ -46,7 +46,6 @@ public class Runner {
                 student.setCourse(student.getCourse() + 1);
             }
         }
-
     }
 
     private static void printStudents(List<Student> students) {
