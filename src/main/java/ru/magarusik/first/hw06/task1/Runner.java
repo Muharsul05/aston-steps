@@ -17,12 +17,12 @@ public class Runner {
         LOGGER.setLevel(DEFAULT_LOGGER_LEVEL);
 
         List<String> logins = List.of(
-                "", " ", "loginloginloginloginloginl",
+                "", "login login", "loginloginloginloginloginl",
                 "login1", "login2", "login3", "login4", "login5");
 
         List<String> passwords = List.of("", "", "",
                 "passwordpasswordpasswordpasswordpassword", "passwordpassword",
-                "password1", "passward3", "password4");
+                "password1", "password3", "password4");
 
         List<String> confirmPasswords = List.of("", "", "",
                 "", "", "password2", "password3", "password4");
@@ -31,7 +31,7 @@ public class Runner {
     }
 
     /**
-     * Данный метод прогоняет тесты над методом validate для каждого случая проверки.
+     * Метод прогоняет тесты над методом validate для каждого случая проверки.
      *
      * @param logins           Логины пользователей
      * @param passwords        Пароли пользователей

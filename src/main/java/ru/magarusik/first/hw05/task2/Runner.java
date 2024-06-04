@@ -25,7 +25,6 @@ public class Runner {
 
         double averageSalary = averageSalary(employees);
         System.out.println("\nСредняя зарплата: " + averageSalary);
-
     }
 
     private static void printEmployeesAgeOverThirtyYears(List<Employee> employees) {

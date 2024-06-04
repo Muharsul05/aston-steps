@@ -7,6 +7,9 @@ public class Utils {
 
     private static final Scanner scanner = new Scanner(System.in);
 
+    private Utils() {
+    }
+
     public static List<String> inputStrings() {
         System.out.println("Введите 3 строки:");
         return List.of(scanner.nextLine(), scanner.nextLine(), scanner.nextLine());

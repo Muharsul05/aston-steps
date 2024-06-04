@@ -10,14 +10,6 @@ class Runner {
         var immutablePerson = new ImmutablePerson("John", 25,
                 new ArrayList<>(List.of("music", "sport", "programming")));
 
-//        Unsupported operations:
-//        immutablePerson.name = "Doe";
-//        immutablePerson.age = 30;
-//        immutablePerson.hobbies = List.of("sport", "programming");
-//        immutablePerson.getHobbies().add("travel");
-//        immutablePerson.getHobbies().remove("music");
-//        Даже idea предлагает класс ImmutablePerson превратить в запись (record Java 14).
-
         System.out.println(immutablePerson);
 
         System.out.println("\n____________Mutable_Person_____________");

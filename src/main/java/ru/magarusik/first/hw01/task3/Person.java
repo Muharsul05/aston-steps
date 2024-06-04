@@ -2,8 +2,9 @@ package ru.magarusik.first.hw01.task3;
 
 class Person {
 
-    public static String name;
-    public static String surname;
+    public String name;
+    public String surname;
+    public int age;
 
     public Person(String name, String surname, int age) {
         this.name = name;
@@ -13,8 +14,6 @@ class Person {
 
     public Person() {
     }
-
-    public static int age;
 
     public String getName() {
         return name;
@@ -43,9 +42,9 @@ class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                '}';
+               "name='" + name + '\'' +
+               ", surname='" + surname + '\'' +
+               ", age=" + age +
+               '}';
     }
 }

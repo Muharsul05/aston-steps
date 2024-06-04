@@ -21,6 +21,9 @@ public class EmployeeGenerator {
     private static final int MIN_SALARY = 30_000;
     private static final int MAX_SALARY = 90_000;
 
+    private EmployeeGenerator() {
+    }
+
     static List<Employee> generateEmployeeList(int count) {
         return Stream
                 .generate(EmployeeGenerator::generateEmployee)

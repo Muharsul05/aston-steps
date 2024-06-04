@@ -37,10 +37,6 @@ class Sedan extends Car {
         return luxuryLevel;
     }
 
-    public void setFuelType(FuelType fuelType) {
-        super.setFuelType(fuelType);
-    }
-
     public void setNumberOfDoors(int numberOfDoors) {
         this.numberOfDoors = numberOfDoors;
     }
@@ -56,10 +52,10 @@ class Sedan extends Car {
     @Override
     public String toString() {
         return "Sedan{" +
-                "fuelType=" + getFuelType() +
-                ", numberOfDoors=" + getNumberOfDoors() +
-                ", trunkCapacity=" + getTrunkCapacity() +
-                ", luxuryLevel=" + luxuryLevel +
-                '}';
+               "fuelType=" + getFuelType() +
+               ", numberOfDoors=" + getNumberOfDoors() +
+               ", trunkCapacity=" + getTrunkCapacity() +
+               ", luxuryLevel=" + luxuryLevel +
+               '}';
     }
 }

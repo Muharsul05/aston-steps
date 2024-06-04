@@ -19,6 +19,7 @@ class ChildB extends SuperA {
         System.out.println("B constructor");
     }
 
+    @Override
     public void showInfo() {
         System.out.println("B showInfo method");
     }
