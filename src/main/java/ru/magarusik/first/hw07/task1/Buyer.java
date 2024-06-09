@@ -24,7 +24,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     @Override
     public void enterToMarket() {
-        LOGGER.info(Thread.currentThread().getName() + " зашёл в магазин");
+        LOGGER.info("%s зашёл в магазин".formatted(getName()));
     }
 
     /**
@@ -32,7 +32,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     @Override
     public void chooseGoods() {
-        LOGGER.info(Thread.currentThread().getName() + " выбирает товар");
+        LOGGER.info("%s выбирает товар".formatted(getName()));
         doTask();
     }
 
@@ -41,8 +41,8 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     @Override
     public void goOut() {
-        LOGGER.info(Thread.currentThread().getName() + " выходит из магазина");
-        LOGGER.info("Товары в корзине: " + this.basket.toString());
+        LOGGER.info(getName() + " выходит из магазина");
+        LOGGER.info("Товары в корзине: %s".formatted(this.basket));
     }
 
     /**
@@ -78,7 +78,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     @Override
     public void takeBasket() {
-        LOGGER.info(Thread.currentThread().getName() + " берёт корзину");
+        LOGGER.info("%s берёт корзину".formatted(getName()));
         this.setBasket(new Basket());
         doTask();
     }
@@ -90,7 +90,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
     public void putGoodsToBasket() {
         Product product = getRandomGood();
         this.basket.put(product);
-        LOGGER.info(Thread.currentThread().getName() + " положил товар " + product + " в корзину");
+        LOGGER.info("%s положил товар %s в корзину".formatted(getName(), product.name()));
         doTask();
     }
 
@@ -119,5 +119,9 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     public void setBasket(IBasket basket) {
         this.basket = basket;
+    }
+
+    private String getName() {
+        return Thread.currentThread().getName();
     }
 }
