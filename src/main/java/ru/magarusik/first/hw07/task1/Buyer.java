@@ -54,23 +54,16 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
      */
     @Override
     public void run() {
-        try {
-            SEMAPHORE.acquire();
+        this.enterToMarket();
+        this.takeBasket();
 
-            this.enterToMarket();
-            this.takeBasket();
-
-            int randomBuyCount = RANDOM.nextInt(1, 4);
-            for (int i = 0; i < randomBuyCount; i++) {
-                this.chooseGoods();
-                this.putGoodsToBasket();
-            }
-
-            this.goOut();
-            SEMAPHORE.release();
-        } catch (InterruptedException e) {
-            LOGGER.log(Level.WARNING, e.getMessage(), e);
+        int randomBuyCount = RANDOM.nextInt(1, 4);
+        for (int i = 0; i < randomBuyCount; i++) {
+            this.chooseGoods();
+            this.putGoodsToBasket();
         }
+
+        this.goOut();
     }
 
     /**
@@ -115,7 +108,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable {
     }
 
     /**
-     * @return IBasket корзина.
+     * Устанавливает IBasket корзина.
      */
     public void setBasket(IBasket basket) {
         this.basket = basket;

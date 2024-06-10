@@ -1,6 +1,7 @@
 package ru.magarusik.first.hw07.task1;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
@@ -13,13 +14,27 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        AtomicInteger counter = new AtomicInteger(1);
+        var counter = new AtomicInteger(1);
 
-        List<Thread> buyers = Stream.generate(() ->
-                        new Thread(new Buyer(), "Buyer " + counter.getAndIncrement()))
-                .limit(10)
+        List<Thread> buyers = Stream.generate(() -> new Thread(new Buyer(), "Buyer " + counter.getAndIncrement()))
+                .limit(1_000)
                 .toList();
 
-        buyers.forEach(Thread::start);
+        var iterator = buyers.iterator();
+
+        long endTime = System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(2);
+        while (iterator.hasNext()) {
+            if (endTime < System.currentTimeMillis()) {
+                break;
+            }
+            iterator.next().start();
+            iterator.next().start();
+
+            try {
+                Thread.sleep(1_000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

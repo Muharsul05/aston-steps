@@ -2,7 +2,6 @@ package ru.magarusik.first.hw07.task1;
 
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.Semaphore;
 import java.util.logging.Logger;
 
 /**
@@ -14,11 +13,6 @@ public class Utils {
      * Генерирует случайные числа.
      */
     static final Random RANDOM = new Random();
-
-    /**
-     * Ограничивает доступ к магазину.
-     */
-    static final Semaphore SEMAPHORE = new Semaphore(2);
 
     /**
      * Ассортимент магазина
