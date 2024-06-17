@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw10.task2;
+package ru.magarusik.first.hw10.spring_boot.task2;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

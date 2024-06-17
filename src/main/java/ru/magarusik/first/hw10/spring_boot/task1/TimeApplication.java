@@ -1,4 +1,4 @@
-package ru.magarusik.first.hw10.task1;
+package ru.magarusik.first.hw10.spring_boot.task1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
