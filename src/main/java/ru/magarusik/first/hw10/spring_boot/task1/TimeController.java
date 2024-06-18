@@ -14,9 +14,13 @@ import java.util.Set;
 public class TimeController {
 
     private static final Set<String> zoneIds;
+
     private static final Instant INSTANT;
+
     private static final DateTimeFormatter FORMATTER;
+
     private static final DateTimeFormatter TIME_FORMATTER;
+
     private static final DateTimeFormatter DATE_FORMATTER;
 
     static {
@@ -37,7 +41,7 @@ public class TimeController {
      * @throws RuntimeException Если города нет в названии часового пояса.
      */
     @GetMapping("/{town}")
-    public String getTime(@PathVariable String town) {
+    public String getTimeByTown(@PathVariable String town) {
         var findTown = town.toLowerCase();
 
         var townTimeZone = zoneIds.stream()
@@ -46,7 +50,7 @@ public class TimeController {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Города в названии тайм зоны нет"));
 
-        return "Время в городе " + town + ": " + INSTANT.atZone(townTimeZone).format(FORMATTER);
+        return "Время в " + town + ": " + INSTANT.atZone(townTimeZone).format(FORMATTER);
     }
 
     /**
@@ -54,7 +58,7 @@ public class TimeController {
      *
      * @return Текущее время.
      */
-    @GetMapping()
+    @GetMapping
     public String getCurrentTime() {
         var zoneDateTime = ZonedDateTime.now();
         return """
